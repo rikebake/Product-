@@ -26,6 +26,9 @@ with open('product.txt','w') as file:
 	for p in product:
 		file.write(p[0] + ',' + p[1] + '\n' )
 
-with open('product.csv','w') as file:
+with open('product.csv','w', encoding = 'utf-8') as file:  # utf-8 is the most common "encoding" to avoid error due to Chinese
+	#file.write('item,price\n')  # adding header in the table, English is ok
+	file.write('項目,價格\n')  # Chinese causing error 
+
 	for p in product:
 		file.write(p[0] + ',' + p[1] + '\n' )
