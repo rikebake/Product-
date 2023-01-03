@@ -21,3 +21,11 @@ print(product[1][1])
 # pull the name and price out of product through FOR
 for p in product:
 	print(p)
+
+with open('product.txt','w') as file:
+	for p in product:
+		file.write(p[0] + ',' + p[1] + '\n' )
+
+with open('product.csv','w') as file:
+	for p in product:
+		file.write(p[0] + ',' + p[1] + '\n' )
