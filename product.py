@@ -18,3 +18,6 @@ print(product)
 print(product[0][0]) # the 1st box of Product then the 1st element of the 1st box
 print(product[1][1])
 
+# pull the name and price out of product through FOR
+for p in product:
+	print(p)
