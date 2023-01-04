@@ -1,5 +1,19 @@
-# 記帳program >> 2D list 
+#read the file that was saved already
 product = []
+with open('product.csv','r', encoding = 'utf-8') as file: # encoding is important , otherwise , it will have encoding issues
+	for line in file:
+		name,price = line.strip().split(',') # strip is to remove the end of /n, then split per ,
+		#^^^^^^^^^^ equal to the following 
+		#name = line(0)
+		#price = line(1)
+		product.append([name,price])
+print('s1',product)
+
+
+
+
+# 記帳program >> 2D list 
+
 while True:
 	name = input('input the item name ')
 	if name == 'q':
@@ -13,7 +27,6 @@ while True:
 	
 	#<<< small list completed >>>
 	product.append([name,price]) # put the small list into big list
-print(product)
 
 print(product[0][0]) # the 1st box of Product then the 1st element of the 1st box
 print(product[1][1])
