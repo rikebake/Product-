@@ -2,6 +2,9 @@
 product = []
 with open('product.csv','r', encoding = 'utf-8') as file: # encoding is important , otherwise , it will have encoding issues
 	for line in file:
+		# in order to skip the header ,i.e. item , price, continue is introduce 
+		if 'item,price' in line:
+			continue # continue is to skip the code in this round of loop but break is to jump out of the entire loop 
 		name,price = line.strip().split(',') # strip is to remove the end of /n, then split per ,
 		#^^^^^^^^^^ equal to the following 
 		#name = line(0)
@@ -9,11 +12,7 @@ with open('product.csv','r', encoding = 'utf-8') as file: # encoding is importan
 		product.append([name,price])
 print('s1',product)
 
-
-
-
 # 記帳program >> 2D list 
-
 while True:
 	name = input('input the item name ')
 	if name == 'q':
